@@ -1,27 +1,30 @@
 <template>
-  <div class="container">
-    <div class="post_container">
+  <div class="container-fluid container_full">
 
-      <h2>Lista Post</h2>
-      <ul>
-        <li v-for="post in posts" :key="post.id"> 
-          <h4>{{post.title}}</h4>
-          <h5>Contenuto:</h5>
-          <p>{{post.content}}</p>
-          <h5>Categoria:</h5>
-          <p>{{post.category.name}}</p>
-        </li>
-      </ul>
+    <div class="p-3 p-md-5 text-center text-light bg-dark h-100">
+      <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 fw-normal">Boolpress Inc</h1>
+        <p class="lead fw-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sint eligendi iste natus veniam! Nostrum doloribus repudiandae dolorem, aut amet nihil alias! Ex reiciendis laudantium accusamus ratione, officiis aliquid error?</p>
+        <router-link class="btn btn-outline-success" :to="{ name:'blog'}">Leggi i nostri articoli</router-link>
+      </div>
     </div>
+
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeComp'
+  name: 'HomeComp',
+  
 }
 </script>
 
-<style>
+<style lang="scss">
+
+.container_full{
+  height: calc(100vh - 83px - 83px);
+  overflow-y:scroll;
+  padding:0;
+}
 
 </style>
