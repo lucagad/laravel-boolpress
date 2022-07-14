@@ -1,10 +1,11 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <HeaderComp/>
 
     <main>
       <router-view></router-view>
     </main>
+    
 
     <FooterComp/>
   </div>
@@ -42,6 +43,10 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+
+main{
+  height: calc(100vh - 83px - 83px);
+}
 
 </style>

@@ -1,8 +1,5 @@
 <template>
   <div class="container">
-
-    <h1>APP VUE</h1>
-
     <div class="post_container">
 
       <h2>Lista Post</h2>
@@ -15,9 +12,7 @@
           <p>{{post.category.name}}</p>
         </li>
       </ul>
-
     </div>
-
   </div>
 </template>
 
