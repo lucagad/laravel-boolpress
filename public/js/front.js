@@ -2210,7 +2210,7 @@ var render = function render() {
       }
     }
   }, [_vm._v("»\n                ")])])], 2)])]), _vm._v(" "), _c("div", {
-    staticClass: "d-flex justify-content-center align-items-center flex-wrap"
+    staticClass: "d-flex justify-content-center align-items-center flex-wrap my-3"
   }, _vm._l(_vm.posts, function (post) {
     return _c("BlogPostComp", {
       key: post.id,
@@ -6946,7 +6946,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".container_full {\n  height: calc(100vh - 83px - 83px);\n  overflow-y: scroll;\n  padding: 0;\n}", ""]);
+exports.push([module.i, ".container_full {\n  height: calc(100vh - 83px - 83px);\n  overflow-y: scroll;\n  padding: 0;\n}\n.page-item.active .page-link {\n  background-color: #00d25f;\n  border-color: #00d25f;\n}\n.page-item .page-link {\n  color: #00d25f;\n}", ""]);
 
 // exports
 

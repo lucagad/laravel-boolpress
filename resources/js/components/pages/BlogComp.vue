@@ -43,7 +43,7 @@
 
       </div>
       
-      <div class="d-flex justify-content-center align-items-center flex-wrap">
+      <div class="d-flex justify-content-center align-items-center flex-wrap my-3">
         <BlogPostComp
           v-for="post in posts" 
           :key="post.id"
@@ -93,10 +93,26 @@ export default {
 
 <style lang="scss">
 
+@import 'resources/sass/front/_variables.scss';
+
 .container_full{
   height: calc(100vh - 83px - 83px);
   overflow-y:scroll;
   padding:0;
 }
+
+.page-item{
+  
+  &.active .page-link{
+    background-color: $primary-color;
+    border-color: $primary-color;
+  }
+
+  .page-link{
+  color: $primary-color;
+  }
+}
+
+
 
 </style>

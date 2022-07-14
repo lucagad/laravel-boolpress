@@ -29,6 +29,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+@import 'resources/sass/front/_variables.scss';
+
+
   header{
     
     a{
@@ -37,7 +41,7 @@ export default {
 
     .nav-link.active{
       color: #fff;
-      background-color: #00d25f;
+      background-color: $primary-color;
     }
   }
   

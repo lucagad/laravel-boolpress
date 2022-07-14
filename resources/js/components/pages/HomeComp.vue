@@ -25,6 +25,7 @@ export default {
   height: calc(100vh - 83px - 83px);
   overflow-y:scroll;
   padding:0;
+  
 
   .herobanner{
     height: 100%;
