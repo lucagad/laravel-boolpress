@@ -1,8 +1,21 @@
 <template>
-  <div class="container">
+  <div class="container-fluid container_full">
 
-    <h1>About</h1>
+    <div class="p-3 p-md-5 text-center text-light bg-dark">
+      <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 fw-normal">Chi Siamo</h1>
+        <p class="lead fw-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ullam libero numquam doloribus incidunt consectetur fugit asperiores. Obcaecati, magnam unde.
+        </p>
+      </div>
+    </div>
 
+    <div class="text_container">
+
+      <div class="mx-2 my-3 text-center">
+        <h2>Chi siamo</h2>
+      </div>
+
+    </div>
   </div>
 </template>
 
@@ -12,6 +25,12 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+
+.container_full{
+  height: calc(100vh - 83px - 83px);
+  overflow-y:scroll;
+  padding:0;
+}
 
 </style>
