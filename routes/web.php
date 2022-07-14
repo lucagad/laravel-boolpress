@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('guest.welcome');
-})->name('home');
-
 Auth::routes();
 
 Route::middleware('auth')
@@ -30,3 +26,8 @@ Route::middleware('auth')
         Route::resource('categories', 'CategoryController');
 
 });
+
+// qualsiasi altra rotta la gestisco con guest. home
+Route::get('{any?}', function (){
+    return view('guest.welcome');
+    })->where('any','.*')->name('home');

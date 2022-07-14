@@ -1,37 +1,35 @@
 <template>
   <div class="container">
-    <h1>APP VUE</h1>
+    <HeaderComp/>
 
-    <div class="post_container">
+    <main>
+      <router-view></router-view>
+    </main>
 
-      <h2>Lista Post</h2>
-      <ul>
-        <li v-for="post in posts" :key="post.id"> 
-          <h4>{{post.title}}</h4>
-          <h5>Contenuto:</h5>
-          <p>{{post.content}}</p>
-          <h5>Categoria:</h5>
-          <p>{{post.category.name}}</p>
-        </li>
-      </ul>
-
-    </div>
-
+    <FooterComp/>
   </div>
 </template>
 
 <script>
+
+import FooterComp from './components/partials/FooterComp.vue'
+import HeaderComp from './components/partials/HeaderComp.vue'
+
 export default {
+  components: { HeaderComp, FooterComp },
   name: 'app',
+
   data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/posts",
       posts: ""
     }
   },
+
   mounted() {
     this.callPostsAPI()
   },
+
   methods: {
     callPostsAPI(){
       axios.get(this.apiUrl)
@@ -40,8 +38,7 @@ export default {
         console.log('Risposta API Post---->',this.posts);
       })
     },
-  },
-
+  }
 }
 </script>
 

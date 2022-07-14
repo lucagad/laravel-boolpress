@@ -37346,9 +37346,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/lucagaddini/Desktop/Boolean Carrers/001 Corso Full Stack Developer/007 Laravel/laravel-api/resources/js/admin.js */"./resources/js/admin.js");
-__webpack_require__(/*! /Users/lucagaddini/Desktop/Boolean Carrers/001 Corso Full Stack Developer/007 Laravel/laravel-api/resources/sass/admin/style.scss */"./resources/sass/admin/style.scss");
-module.exports = __webpack_require__(/*! /Users/lucagaddini/Desktop/Boolean Carrers/001 Corso Full Stack Developer/007 Laravel/laravel-api/resources/sass/front/style.scss */"./resources/sass/front/style.scss");
+__webpack_require__(/*! /Users/lucagaddini/Desktop/Boolean Carrers/001 Corso Full Stack Developer/007 Laravel/laravel-boolpress/resources/js/admin.js */"./resources/js/admin.js");
+__webpack_require__(/*! /Users/lucagaddini/Desktop/Boolean Carrers/001 Corso Full Stack Developer/007 Laravel/laravel-boolpress/resources/sass/admin/style.scss */"./resources/sass/admin/style.scss");
+module.exports = __webpack_require__(/*! /Users/lucagaddini/Desktop/Boolean Carrers/001 Corso Full Stack Developer/007 Laravel/laravel-boolpress/resources/sass/front/style.scss */"./resources/sass/front/style.scss");
 
 
 /***/ })
