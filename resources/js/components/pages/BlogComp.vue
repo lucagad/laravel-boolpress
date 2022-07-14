@@ -9,10 +9,38 @@
       </div>
     </div>
 
-    <div class="post_container">
+    <div class="container-fluid">
 
       <div class="mx-2 my-3 text-center">
         <h2>Lista Post</h2>
+
+        <div class="pagination_container my-3 d-flex justify-content-center">
+            <ul class="pagination">
+              <li class="page-item"
+                  :class="pagination.current === 1 ? 'disabled' : '' ">
+                <a class="page-link"
+                  @click="getPostsAPI(pagination.current - 1)">&laquo;
+                </a>
+              </li>
+
+              <li 
+                v-for=" i in pagination.last"
+                :key="btn-i"
+                @click="getPostsAPI(i)"
+                class="page-item"
+                :class="pagination.current === i ? ' active' : '' " >
+                <a class="page-link" href="#">{{i}}</a>
+              </li>
+    
+              <li class="page-item"
+                  :class="pagination.current === pagination.last ? 'disabled' : '' " >
+                <a class="page-link"
+                    @click="getPostsAPI(pagination.current + 1)">&raquo;
+                </a>
+              </li>
+            </ul>
+        </div>
+
       </div>
       
       <div class="d-flex justify-content-center align-items-center flex-wrap">
@@ -36,20 +64,27 @@ export default {
   data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/posts",
-      posts: null
+      posts: null,
+      pagination: null,
     }
   },
 
   mounted() {
-    this.callPostsAPI()
+    this.getPostsAPI(1)
   },
 
   methods: {
-    callPostsAPI(){
-      axios.get(this.apiUrl)
+    getPostsAPI(page){
+      axios.get(this.apiUrl + '?page=' + page)
       .then(r => {
         this.posts = r.data.data;
+        this.pagination = {
+          current: r.data.current_page, 
+          last: r.data.last_page
+        }
+
         console.log('Risposta API Post---->',this.posts);
+        console.log('Risposta PAGINATION ---->',this.pagination);
       })
     },
   }

@@ -1975,19 +1975,25 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/posts",
-      posts: null
+      posts: null,
+      pagination: null
     };
   },
   mounted: function mounted() {
-    this.callPostsAPI();
+    this.getPostsAPI(1);
   },
   methods: {
-    callPostsAPI: function callPostsAPI() {
+    getPostsAPI: function getPostsAPI(page) {
       var _this = this;
 
-      axios.get(this.apiUrl).then(function (r) {
+      axios.get(this.apiUrl + '?page=' + page).then(function (r) {
         _this.posts = r.data.data;
+        _this.pagination = {
+          current: r.data.current_page,
+          last: r.data.last_page
+        };
         console.log('Risposta API Post---->', _this.posts);
+        console.log('Risposta PAGINATION ---->', _this.pagination);
       });
     }
   }
@@ -2160,8 +2166,50 @@ var render = function render() {
   return _c("div", {
     staticClass: "container-fluid container_full"
   }, [_vm._m(0), _vm._v(" "), _c("div", {
-    staticClass: "post_container"
-  }, [_vm._m(1), _vm._v(" "), _c("div", {
+    staticClass: "container-fluid"
+  }, [_c("div", {
+    staticClass: "mx-2 my-3 text-center"
+  }, [_c("h2", [_vm._v("Lista Post")]), _vm._v(" "), _c("div", {
+    staticClass: "pagination_container my-3 d-flex justify-content-center"
+  }, [_c("ul", {
+    staticClass: "pagination"
+  }, [_c("li", {
+    staticClass: "page-item",
+    "class": _vm.pagination.current === 1 ? "disabled" : ""
+  }, [_c("a", {
+    staticClass: "page-link",
+    on: {
+      click: function click($event) {
+        return _vm.getPostsAPI(_vm.pagination.current - 1);
+      }
+    }
+  }, [_vm._v("«\n                ")])]), _vm._v(" "), _vm._l(_vm.pagination.last, function (i) {
+    return _c("li", {
+      key: _vm.btn - i,
+      staticClass: "page-item",
+      "class": _vm.pagination.current === i ? " active" : "",
+      on: {
+        click: function click($event) {
+          return _vm.getPostsAPI(i);
+        }
+      }
+    }, [_c("a", {
+      staticClass: "page-link",
+      attrs: {
+        href: "#"
+      }
+    }, [_vm._v(_vm._s(i))])]);
+  }), _vm._v(" "), _c("li", {
+    staticClass: "page-item",
+    "class": _vm.pagination.current === _vm.pagination.last ? "disabled" : ""
+  }, [_c("a", {
+    staticClass: "page-link",
+    on: {
+      click: function click($event) {
+        return _vm.getPostsAPI(_vm.pagination.current + 1);
+      }
+    }
+  }, [_vm._v("»\n                ")])])], 2)])]), _vm._v(" "), _c("div", {
     staticClass: "d-flex justify-content-center align-items-center flex-wrap"
   }, _vm._l(_vm.posts, function (post) {
     return _c("BlogPostComp", {
@@ -2186,13 +2234,6 @@ var staticRenderFns = [function () {
   }, [_vm._v("Il Blog")]), _vm._v(" "), _c("p", {
     staticClass: "lead fw-normal"
   }, [_vm._v("Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ullam libero numquam doloribus incidunt consectetur fugit asperiores. Obcaecati, magnam unde.\n        ")])])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "mx-2 my-3 text-center"
-  }, [_c("h2", [_vm._v("Lista Post")])]);
 }];
 render._withStripped = true;
 
