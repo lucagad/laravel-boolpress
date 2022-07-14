@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/posts",
-      posts: ""
+      posts: null
     }
   },
 
@@ -48,7 +48,7 @@ export default {
     callPostsAPI(){
       axios.get(this.apiUrl)
       .then(r => {
-        this.posts = r.data.posts;
+        this.posts = r.data.data;
         console.log('Risposta API Post---->',this.posts);
       })
     },

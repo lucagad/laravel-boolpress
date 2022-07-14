@@ -1975,7 +1975,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/posts",
-      posts: ""
+      posts: null
     };
   },
   mounted: function mounted() {
@@ -1986,7 +1986,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get(this.apiUrl).then(function (r) {
-        _this.posts = r.data.posts;
+        _this.posts = r.data.data;
         console.log('Risposta API Post---->', _this.posts);
       });
     }
