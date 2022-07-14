@@ -45,7 +45,7 @@
       
       <div class="d-flex justify-content-center align-items-center flex-wrap my-3">
         <BlogPostComp
-          v-for="post in posts" 
+          v-for="post in posts"
           :key="post.id"
           :post="post"
         />

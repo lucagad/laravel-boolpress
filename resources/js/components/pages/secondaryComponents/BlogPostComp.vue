@@ -3,8 +3,10 @@
     <img src="img/placeholder.jpg" alt="Image Placeholder">
 
     <div class="card-body d-flex flex-column justify-content-center">
-      <h5 class="card-title">{{post.title}}</h5>
-      <h6 class="card-text mb-2 text-muted">{{post.category.name}}</h6>
+      <div class="title_box">
+        <h5 class="card-title">{{post.title}}</h5>
+        <span class="badge badge-info mb-2">{{post.category.name}}</span>
+      </div>
       <div class="card_text_container">
         <p class="card-text">{{post.content}}</p>
       </div>

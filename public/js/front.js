@@ -2348,11 +2348,13 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("div", {
     staticClass: "card-body d-flex flex-column justify-content-center"
+  }, [_c("div", {
+    staticClass: "title_box"
   }, [_c("h5", {
     staticClass: "card-title"
-  }, [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("h6", {
-    staticClass: "card-text mb-2 text-muted"
-  }, [_vm._v(_vm._s(_vm.post.category.name))]), _vm._v(" "), _c("div", {
+  }, [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("span", {
+    staticClass: "badge badge-info mb-2"
+  }, [_vm._v(_vm._s(_vm.post.category.name))])]), _vm._v(" "), _c("div", {
     staticClass: "card_text_container"
   }, [_c("p", {
     staticClass: "card-text"
