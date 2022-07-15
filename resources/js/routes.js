@@ -7,6 +7,7 @@ import HomeComp from './components/pages/HomeComp.vue'
 import AboutComp from './components/pages/AboutComp.vue'
 import ContactsComp from './components/pages/ContactsComp.vue'
 import BlogComp from './components/pages/BlogComp.vue'
+import PostDetailsComp from './components/pages/SecondaryComponents/PostDetailsComp.vue'
 
 
 const router = new VueRouter({
@@ -32,6 +33,11 @@ const router = new VueRouter({
             path: '/contatti',
             name: 'contacts',
             component: ContactsComp
+          },
+          {
+            path: '/dettagli/:slug',
+            name: 'dettagli',
+            component: PostDetailsComp
           }
         ]
 });

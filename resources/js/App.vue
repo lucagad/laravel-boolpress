@@ -5,10 +5,12 @@
     <main>
       <router-view></router-view>
     </main>
-    
+      
 
     <FooterComp/>
   </div>
+
+
 </template>
 
 <script>
