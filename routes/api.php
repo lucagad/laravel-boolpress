@@ -8,5 +8,5 @@ Route::namespace('Api')
     ->prefix('posts')
     ->group(function(){
         Route::get('/', 'PageController@index');
-        Route::get('/(slug}', 'PageController@show');
+        Route::get('/{slug}', 'PageController@show');
     });

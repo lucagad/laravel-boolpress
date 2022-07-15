@@ -12,8 +12,8 @@
         <p>{{this.shortContent}}</p>
       </div>
       
-      <a type="button" class="btn btn_custom" href="">
-        <router-link :to="{name: 'dettagli', params:{slug: post.slug}}">Leggi</router-link>
+      <a type="button" class="btn btn_custom">
+        <router-link :to="{name:'dettagli', params:{slug: post.slug}}">Leggi</router-link>
       </a>
 
     </div>

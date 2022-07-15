@@ -1,39 +1,32 @@
 <template>
 
-  <div class="row">
-
-    <div class="col-4">
-      <img src="img/placeholder.jpg" alt="Image Placeholder">
-    </div>
-
     <div class="col-8">
 
-      <div class="card_body_custom d-flex flex-column justify-content-center">
+      <div class="d-flex flex-column justify-content-center">
 
         <div class="title_box">
           <h6 class="card-title">{{post.title}}</h6>
+          <span class="mb-2">{{this.formatDate}}</span>
           <span class="badge badge-info mb-2">{{post.category.name}}</span>
-          <span class="badge badge-info mb-2">{{post.tags.name}}</span>
-          <span class="badge badge-info mb-2">{{this.formatDate}}</span>
 
+          <span class="badge badge-info mb-2">{{post.tags.name}}</span>
+
+          
         </div>
 
       </div>
 
     </div>
 
-
-  </div>
 </template>
 
 <script>
 export default {
   name: 'PostDetailsComp',
-
   data(){
     return{
       post: null, 
-      apiUrl: '/api/posts/',
+      apiUrl: 'http://127.0.0.1:8000/api/posts/',
     }
   },
 
@@ -45,9 +38,8 @@ export default {
     getPostsAPI(){
       axios.get(this.apiUrl + this.$route.params.slug)
       .then(r => {
-        this.post = r.data.data;
-        console.log('Risposta API Post---->',this.post);
-
+        this.post = r.data;
+        console.log('Risposta API "PostDetailsComp"---->',this.post);
       })
     },
   },
@@ -55,12 +47,17 @@ export default {
   computed:{
     formatDate(){
       const d = new Date(this.post.updated_at);
+
       let day = d.getDate();
       let month = d.getMonth() + 1;
-      const year = d. getFullYear();
-      if(day < 10 ) day = '0' + day;
-      if(month < 10 ) day = '0' + month;
-      return '$(day)/${month}/${year}';
+      const year = d.getFullYear();
+
+      if(day < 10) day = '0' + day;
+      if(month < 10) month = '0' + month;
+
+      const date = day+'/'+month+'/'+year;
+
+      return date;
       }
   }
 }

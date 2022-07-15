@@ -2073,7 +2073,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       post: null,
-      apiUrl: '/api/posts/'
+      apiUrl: 'http://127.0.0.1:8000/api/posts/'
     };
   },
   mounted: function mounted() {
@@ -2084,8 +2084,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get(this.apiUrl + this.$route.params.slug).then(function (r) {
-        _this.post = r.data.data;
-        console.log('Risposta API Post---->', _this.post);
+        _this.post = r.data;
+        console.log('Risposta API "PostDetailsComp"---->', _this.post);
       });
     }
   },
@@ -2096,8 +2096,9 @@ __webpack_require__.r(__webpack_exports__);
       var month = d.getMonth() + 1;
       var year = d.getFullYear();
       if (day < 10) day = '0' + day;
-      if (month < 10) day = '0' + month;
-      return '$(day)/${month}/${year}';
+      if (month < 10) month = '0' + month;
+      var date = day + '/' + month + '/' + year;
+      return date;
     }
   }
 });
@@ -2418,8 +2419,7 @@ var render = function render() {
   }, [_c("p", [_vm._v(_vm._s(this.shortContent))])]), _vm._v(" "), _c("a", {
     staticClass: "btn btn_custom",
     attrs: {
-      type: "button",
-      href: ""
+      type: "button"
     }
   }, [_c("router-link", {
     attrs: {
@@ -2455,37 +2455,23 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "row"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "col-8"
   }, [_c("div", {
-    staticClass: "card_body_custom d-flex flex-column justify-content-center"
+    staticClass: "d-flex flex-column justify-content-center"
   }, [_c("div", {
     staticClass: "title_box"
   }, [_c("h6", {
     staticClass: "card-title"
   }, [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("span", {
+    staticClass: "mb-2"
+  }, [_vm._v(_vm._s(this.formatDate))]), _vm._v(" "), _c("span", {
     staticClass: "badge badge-info mb-2"
   }, [_vm._v(_vm._s(_vm.post.category.name))]), _vm._v(" "), _c("span", {
     staticClass: "badge badge-info mb-2"
-  }, [_vm._v(_vm._s(_vm.post.tags.name))]), _vm._v(" "), _c("span", {
-    staticClass: "badge badge-info mb-2"
-  }, [_vm._v(_vm._s(this.formatDate))])])])])]);
+  }, [_vm._v(_vm._s(_vm.post.tags.name))])])])]);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "col-4"
-  }, [_c("img", {
-    attrs: {
-      src: "img/placeholder.jpg",
-      alt: "Image Placeholder"
-    }
-  })]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
