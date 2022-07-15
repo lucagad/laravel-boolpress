@@ -5,13 +5,20 @@
       <div class="d-flex flex-column justify-content-center">
 
         <div class="title_box">
-          <h6 class="card-title">{{post.title}}</h6>
+          <h6 class="">{{post.title}}</h6>
           <span class="mb-2">{{this.formatDate}}</span>
           <span class="badge badge-info mb-2">{{post.category.name}}</span>
 
-          <span class="badge badge-info mb-2">{{post.tags.name}}</span>
+          <ul>
+            <li v-for="tag in post.tags" 
+                :key="`tag-key-${tag.id}`"
+                class="mb-2">{{tag.name}}</li>
+          </ul>
 
-          
+        </div>
+
+        <div class="content_box">
+          <p class="">{{post.content}}</p>
         </div>
 
       </div>
@@ -21,12 +28,15 @@
 </template>
 
 <script>
+
+import {apiUrl} from '../../../config';
+
 export default {
   name: 'PostDetailsComp',
   data(){
     return{
       post: null, 
-      apiUrl: 'http://127.0.0.1:8000/api/posts/',
+      apiUrl
     }
   },
 
@@ -36,7 +46,7 @@ export default {
 
   methods: {
     getPostsAPI(){
-      axios.get(this.apiUrl + this.$route.params.slug)
+      axios.get(this.apiUrl + "/" + this.$route.params.slug)
       .then(r => {
         this.post = r.data;
         console.log('Risposta API "PostDetailsComp"---->',this.post);

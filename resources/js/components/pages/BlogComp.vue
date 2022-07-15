@@ -64,13 +64,14 @@
 
 <script>
 import BlogPostComp from './SecondaryComponents/BlogPostComp.vue';
+import {apiUrl} from '../../config';
 
 export default {
   components: { BlogPostComp },
   name: 'BlogComp',
   data() {
     return {
-      apiUrl: "http://127.0.0.1:8000/api/posts",
+      apiUrl,
       posts: null,
       pagination: {
         current:'',
@@ -94,10 +95,8 @@ export default {
           last: r.data.last_page
         }
 
-        this.isLoaded = true;
-
-        console.log('Risposta API Post---->',this.posts);
-        console.log('Risposta PAGINATION ---->',this.pagination);
+        // console.log('Risposta API Post---->',this.posts);
+        // console.log('Risposta PAGINATION ---->',this.pagination);
       })
     },
   }

@@ -35,14 +35,13 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 @import 'resources/sass/front/_variables.scss';
 
 .card{
   width: 320px;
   height: 380px;
-  overflow: hidden;
   margin: 6px;
   position: relative;
 
@@ -52,6 +51,10 @@ export default {
 
     .card_content{
       font-size: 12px;
+    }
+
+    a{
+      color: white;
     }
 
   }
