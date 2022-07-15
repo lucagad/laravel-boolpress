@@ -121,6 +121,12 @@ export default {
     color: white;
   }
 
+  &.disabled .page-link{
+    color: black;
+    background-color: rgb(231, 231, 231);
+    border-color: rgb(231, 231, 231);
+  }
+
   .page-link{
   color: $primary-color;
   }

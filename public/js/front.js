@@ -7064,7 +7064,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".container_full[data-v-02893632] {\n  height: calc(100vh - 83px - 83px);\n  overflow-y: scroll;\n  padding: 0;\n}\n.page-item.active .page-link[data-v-02893632] {\n  background-color: #00d25f;\n  border-color: #00d25f;\n  color: white;\n}\n.page-item .page-link[data-v-02893632] {\n  color: #00d25f;\n}\n.row[data-v-02893632] {\n  margin: 0;\n  padding: 0;\n}\n.aside[data-v-02893632] {\n  background-color: #909da8;\n  padding: 0;\n}", ""]);
+exports.push([module.i, ".container_full[data-v-02893632] {\n  height: calc(100vh - 83px - 83px);\n  overflow-y: scroll;\n  padding: 0;\n}\n.page-item.active .page-link[data-v-02893632] {\n  background-color: #00d25f;\n  border-color: #00d25f;\n  color: white;\n}\n.page-item.disabled .page-link[data-v-02893632] {\n  color: black;\n  background-color: rgb(231, 231, 231);\n  border-color: rgb(231, 231, 231);\n}\n.page-item .page-link[data-v-02893632] {\n  color: #00d25f;\n}\n.row[data-v-02893632] {\n  margin: 0;\n  padding: 0;\n}\n.aside[data-v-02893632] {\n  background-color: #909da8;\n  padding: 0;\n}", ""]);
 
 // exports
 
